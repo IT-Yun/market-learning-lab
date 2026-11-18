@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Market Lab</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main>
+<h1>Market Learning Lab</h1>
+<p>Try a real HTTP request against a local SQLite database using fictional items.</p>
+<section>
+<h2>1. Sign in</h2>
+<form id="login">
+<label>Account<select id="username">
+<option>alice</option>
+<option>bob</option>
+</select>
+</label>
+<label>Session password<input id="password" type="password" required autocomplete="off">
+</label>
+<button>Sign in</button>
+</form>
+<button id="logout">Sign out</button>
+<p id="session">Signed out</p>
+</section>
+<section>
+<h2>2. Create an item</h2>
+<form id="create">
+<label>Item name<input id="title" required maxlength="80">
+</label>
+<label>Price (AUD)<input id="price" type="number" min="0" max="100000" step="0.01" required>
+</label>
+<label>
+<input id="fault" type="checkbox">Simulate an interrupted save</label>
+<button id="save">Save item</button>
+</form>
+</section>
+<section>
+<h2>3. Saved items</h2>
+<button id="refresh">Refresh</button>
+<ul id="items">
+</ul>
+</section>
+<section>
+<h2>HTTP response</h2>
+<pre id="result" role="status" aria-live="polite">Your response will appear here.</pre>
+</section>
+</main>
+<script src="app.js">
+</script>
+</body>
+</html>
